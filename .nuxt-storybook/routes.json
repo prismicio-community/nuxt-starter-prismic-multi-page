@@ -1,0 +1,22 @@
+[
+  {
+    "name": "prismic-preview",
+    "path": "/preview",
+    "component": "/Users/philipsnow/prismic/new-test-app/.nuxt-storybook/prismic/pages/preview.vue",
+    "_name": "_128c9fb6"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/philipsnow/prismic/new-test-app/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_8d4f0cfe"
+  },
+  {
+    "name": "uid",
+    "path": "/:uid",
+    "component": "/Users/philipsnow/prismic/new-test-app/pages/_uid.vue",
+    "chunkName": "pages/_uid",
+    "_name": "_1f3f5fb2"
+  }
+]
