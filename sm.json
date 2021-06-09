@@ -4,6 +4,6 @@
     "vue-essential-slices"
   ],
   "_latest": "0.0.46",
-  "apiEndpoint": "https://tutorial-series.cdn.prismic.io/api/v2",
+  "apiEndpoint": "https://your-repo-name.cdn.prismic.io/api/v2",
   "storybook": "http://localhost:3003"
 }
