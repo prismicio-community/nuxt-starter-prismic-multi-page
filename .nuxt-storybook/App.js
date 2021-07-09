@@ -1,10 +1,13 @@
 import Vue from 'vue'
+import { decode, parsePath, withoutBase, withoutTrailingSlash, normalizeURL } from 'ufo'
 
 import { getMatchedComponentsInstances, getChildrenComponentInstancesUsingFetch, promisify, globalHandleError, urlJoin, sanitizeComponent } from './utils'
 import NuxtError from './components/nuxt-error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 
 import '../node_modules/vue-essential-slices/src/styles/styles.scss'
+
+import '../assets/css/resetr.css'
 
 import '../assets/css/global.css'
 
@@ -96,6 +99,10 @@ export default {
 
     isFetching () {
       return this.nbFetching > 0
+    },
+
+    isPreview () {
+      return Boolean(this.$options.previewData)
     },
   },
 

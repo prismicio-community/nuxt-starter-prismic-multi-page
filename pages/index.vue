@@ -1,6 +1,6 @@
 <template>
   <section>
-    <slice-zone type="page" uid="homepage" />
+    <slice-zone type="home-page" queryType="single" />
   </section>
 </template>
 

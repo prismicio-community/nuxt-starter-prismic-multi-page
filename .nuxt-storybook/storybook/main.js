@@ -1,5 +1,13 @@
-const stories = ['../../components/**/*.stories.@(ts|js)','../../slices/**/*.stories.js','../../slices/**/*.stories.js']
-const addons  = ["@storybook\u002Faddon-essentials"]
+const stories = ['../../components/**/*.stories.@(ts|js)','/Users/philipsnow/prismic/nuxt-sm-tutorial-series/.slicemachine/assets/slices/*/*.stories.js']
+const addons  = ["@storybook\u002Faddon-essentials",{
+  name: '@storybook/addon-postcss',
+  options: {
+    postcssLoaderOptions: {
+      implementation: require('postcss')
+    }
+  }
+}
+]
 
 function nuxifyStorybook(storybookConfig) {
   return {

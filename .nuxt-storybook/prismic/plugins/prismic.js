@@ -1,12 +1,12 @@
 import Vue from 'vue'
-import Prismic from 'prismic-javascript'
+import Prismic from '@prismicio/client'
 import PrismicDOM from 'prismic-dom'
 
 import linkResolver from '../link-resolver.js'
 import htmlSerializer from '../html-serializer.js'
 
 export default async (context, inject) => {
-  const { req, route, res, query, redirect, nuxtState } = context
+  const { req, route, res, query, redirect, nuxtState, base } = context
   let options = {}
 
   // Pass through server requests, primarily for preview
@@ -80,6 +80,9 @@ export default async (context, inject) => {
         if (process.server) {
           redirect(302, url)
         } else {
+          // Add the base path onto the url to preview
+          url = `${base.replace(/\/$/, '')}${url}`
+
           window.location.replace(url)
         }
       },
@@ -102,9 +105,11 @@ export default async (context, inject) => {
   }
   // Preview mode
   if (process.server && !process.static && route.path === '/preview') {
+    // Server side
     await prismic.preview()
   }
   if (process.client && process.static && route.path !== '/preview') {
+    // Client side
     const getPreviewCookie = function () {
       var value = `; ${document.cookie}`
       var parts = value.split(`; ${Prismic.previewCookie}=`)
@@ -123,12 +128,19 @@ export default async (context, inject) => {
     prismic.isPreview = previewCookie && previewCookie[`${repo}.prismic.io`] && previewCookie[`${repo}.prismic.io`].preview
 
     // Refresh data from Prismic preview
-    prismic.isPreview && window.onNuxtReady(async (app) => {
+    if (prismic.isPreview) {
       console.info('[@nuxtjs/prismic] Reload page data for preview')
-      if (app.$store && app.$store._actions.nuxtServerInit) {
-        await app.$store.dispatch('nuxtServerInit', app.$options.context)
+      if (context.enablePreview) {
+        context.enablePreview()
+      } else {
+        // Legacy static preview
+        window.onNuxtReady(async (app) => {
+          if (app.$store && app.$store._actions.nuxtServerInit) {
+            await app.$store.dispatch('nuxtServerInit', app.$options.context)
+          }
+          await app.refresh()
+        })
       }
-      await app.refresh()
-    })
+    }
   }
 }

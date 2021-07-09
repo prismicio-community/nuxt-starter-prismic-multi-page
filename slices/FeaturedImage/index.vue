@@ -1,13 +1,11 @@
 <template>
   <section class='highlight content-section container'>
-    <div class="highlight-left">
+    <div>
       <prismic-rich-text :field="slice.primary.title"/>
       <prismic-rich-text :field="slice.primary.headline"/>
-      <p>
-        <prismic-link :field="slice.primary.link">{{ slice.primary.linkLabel }}</prismic-link>
-      </p>
+      <prismic-link :field="slice.primary.link">{{ slice.primary.linkLabel }}</prismic-link>
     </div>
-    <div class="highlight-right">
+    <div>
       <prismic-image :field="slice.primary.featuredImage"/>
     </div>
   </section>
@@ -29,28 +27,13 @@ export default {
 
 <style scoped>
 .highlight {
-  position: relative;
-  overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 25px;
 }
-
-.highlight-left {
-  width: 43%;
-  float: left;
-}
-
-.highlight-right {
-  width: 48%;
-  float: right;
-}
-
 @media (max-width: 767px) {
-  .content-section {
-    margin-bottom: 2rem;
-  }
-
-  .highlight-left, .highlight-right {
-    width: 100%;
-    float: none;
+  .highlight {
+    grid-template-columns: 1fr;
   }
 }
 </style>

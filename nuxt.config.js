@@ -1,3 +1,11 @@
+import smConfig from "./sm.json";
+
+if (!smConfig.apiEndpoint) {
+  console.warn("Looks like Slice Machine hasn't been bootstraped already.\nCheck the `Getting Started` section of the README file :)");
+}
+
+const { getStoriesPaths } = require('slice-machine-ui/helpers/storybook')
+
 export default {
   target: 'static',
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -38,11 +46,11 @@ export default {
   buildModules: [],
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [["@nuxtjs/prismic", {
-    "endpoint": "https://tutorial-series.cdn.prismic.io/api/v2",
-    "apiOptions": {
-      "routes": [{
-        "type": "page",
-        "path": "/:uid"
+    endpoint: smConfig.apiEndpoint || "",
+    apiOptions: {
+      routes: [{
+        type: "page",
+        path: "/:uid"
       }]
     }
   }], ["nuxt-sm"]],
@@ -51,7 +59,7 @@ export default {
     transpile: ["vue-slicezone", "nuxt-sm"]
   },
   storybook: {
-    stories: ["~/slices/**/*.stories.js", "~/slices/**/*.stories.js"]
+    stories: [...getStoriesPaths()]
   },
   ignore: ["**/*.stories.js", "**/*.stories.js"],
   generate: {
