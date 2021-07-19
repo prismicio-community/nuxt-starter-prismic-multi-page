@@ -1,7 +1,6 @@
-  
 <template>
-  <section class="container">
-    <prismic-rich-text class="content-section" :field="slice.primary.text"/>
+  <section :class="`content-section container ${ slice.variation }`">
+    <prismic-rich-text :field="slice.primary.text"/>
   </section>
 </template>
 
@@ -20,5 +19,10 @@ export default {
 </script>
 
 <style scoped>
-
+.default-slice {
+  column-count: 1;
+}
+.twoColumn {
+  column-count: 2;
+}
 </style>

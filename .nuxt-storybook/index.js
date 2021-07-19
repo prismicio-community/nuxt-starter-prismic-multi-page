@@ -13,11 +13,10 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_4d663614 from 'nuxt_plugin_plugin_4d663614' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_smresolver_3b7475bd from 'nuxt_plugin_smresolver_3b7475bd' // Source: ./prismic/sm-resolver.js (mode: 'all')
-import nuxt_plugin_prismic_78b3426c from 'nuxt_plugin_prismic_78b3426c' // Source: ./prismic/plugins/prismic.js (mode: 'all')
-import nuxt_plugin_prismiccomponents_3256f161 from 'nuxt_plugin_prismiccomponents_3256f161' // Source: ./prismic/plugins/prismic-components.js (mode: 'all')
-import nuxt_plugin_prismicpreview_24bc25de from 'nuxt_plugin_prismicpreview_24bc25de' // Source: ./prismic/middleware/prismic_preview.js (mode: 'all')
+import nuxt_plugin_plugin_8651baf0 from 'nuxt_plugin_plugin_8651baf0' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_smresolver_656596cf from 'nuxt_plugin_smresolver_656596cf' // Source: ./prismic/sm-resolver.js (mode: 'all')
+import nuxt_plugin_prismic_5f1ca6dc from 'nuxt_plugin_prismic_5f1ca6dc' // Source: ./prismic/plugins/prismic.js (mode: 'all')
+import nuxt_plugin_prismiccomponents_72214a0f from 'nuxt_plugin_prismiccomponents_72214a0f' // Source: ./prismic/plugins/prismic-components.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -46,7 +45,11 @@ Vue.component(Nuxt.name, Nuxt)
 
 Object.defineProperty(Vue.prototype, '$nuxt', {
   get() {
-    return this.$root.$options.$nuxt
+    const globalNuxt = this.$root.$options.$nuxt
+    if (process.client && !globalNuxt && typeof window !== 'undefined') {
+      return window.$nuxt
+    }
+    return globalNuxt
   },
   configurable: true
 })
@@ -56,14 +59,18 @@ Vue.use(Meta, {"keyName":"head","attribute":"data-n-head","ssrAttribute":"data-n
 const defaultTransition = {"name":"page","mode":"out-in","appear":true,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
 
 const originalRegisterModule = Vuex.Store.prototype.registerModule
-const baseStoreOptions = { preserveState: process.client }
 
 function registerModule (path, rawModule, options = {}) {
-  return originalRegisterModule.call(this, path, rawModule, { ...baseStoreOptions, ...options })
+  const preserveState = process.client && (
+    Array.isArray(path)
+      ? !!path.reduce((namespacedState, path) => namespacedState && namespacedState[path], this.state)
+      : path in this.state
+  )
+  return originalRegisterModule.call(this, path, rawModule, { preserveState, ...options })
 }
 
 async function createApp(ssrContext, config = {}) {
-  const router = await createRouter(ssrContext)
+  const router = await createRouter(ssrContext, config)
 
   const store = createStore(ssrContext)
   // Add this.$router into store actions/mutations
@@ -203,24 +210,20 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_4d663614 === 'function') {
-    await nuxt_plugin_plugin_4d663614(app.context, inject)
+  if (typeof nuxt_plugin_plugin_8651baf0 === 'function') {
+    await nuxt_plugin_plugin_8651baf0(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_smresolver_3b7475bd === 'function') {
-    await nuxt_plugin_smresolver_3b7475bd(app.context, inject)
+  if (typeof nuxt_plugin_smresolver_656596cf === 'function') {
+    await nuxt_plugin_smresolver_656596cf(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_prismic_78b3426c === 'function') {
-    await nuxt_plugin_prismic_78b3426c(app.context, inject)
+  if (typeof nuxt_plugin_prismic_5f1ca6dc === 'function') {
+    await nuxt_plugin_prismic_5f1ca6dc(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_prismiccomponents_3256f161 === 'function') {
-    await nuxt_plugin_prismiccomponents_3256f161(app.context, inject)
-  }
-
-  if (typeof nuxt_plugin_prismicpreview_24bc25de === 'function') {
-    await nuxt_plugin_prismicpreview_24bc25de(app.context, inject)
+  if (typeof nuxt_plugin_prismiccomponents_72214a0f === 'function') {
+    await nuxt_plugin_prismiccomponents_72214a0f(app.context, inject)
   }
 
   // Lock enablePreview in context
@@ -230,26 +233,31 @@ async function createApp(ssrContext, config = {}) {
     }
   }
 
-  // If server-side, wait for async component to be resolved first
-  if (process.server && ssrContext && ssrContext.url) {
-    await new Promise((resolve, reject) => {
-      router.push(ssrContext.url, resolve, (err) => {
-        // https://github.com/vuejs/vue-router/blob/v3.4.3/src/util/errors.js
-        if (!err._isRouter) return reject(err)
-        if (err.type !== 2 /* NavigationFailureType.redirected */) return resolve()
+  // Wait for async component to be resolved first
+  await new Promise((resolve, reject) => {
+    const { route } = router.resolve(app.context.route.fullPath)
+    // Ignore 404s rather than blindly replacing URL
+    if (!route.matched.length && process.client) {
+      return resolve()
+    }
+    router.replace(route, resolve, (err) => {
+      // https://github.com/vuejs/vue-router/blob/v3.4.3/src/util/errors.js
+      if (!err._isRouter) return reject(err)
+      if (err.type !== 2 /* NavigationFailureType.redirected */) return resolve()
 
-        // navigated to a different route in router guard
-        const unregister = router.afterEach(async (to, from) => {
+      // navigated to a different route in router guard
+      const unregister = router.afterEach(async (to, from) => {
+        if (process.server && ssrContext && ssrContext.url) {
           ssrContext.url = to.fullPath
-          app.context.route = await getRouteData(to)
-          app.context.params = to.params || {}
-          app.context.query = to.query || {}
-          unregister()
-          resolve()
-        })
+        }
+        app.context.route = await getRouteData(to)
+        app.context.params = to.params || {}
+        app.context.query = to.query || {}
+        unregister()
+        resolve()
       })
     })
-  }
+  })
 
   return {
     store,

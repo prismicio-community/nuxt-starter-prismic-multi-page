@@ -12,4 +12,6 @@ globalParameters.docs = {
 }
 export const parameters = globalParameters
 
+export const globalTypes = {}
+
 export const decorators = []

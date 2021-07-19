@@ -102,6 +102,7 @@ footer {
   margin: auto;
 }
 .content-section {
+  clear: both;
   margin-bottom: 3.75rem;
 }
 

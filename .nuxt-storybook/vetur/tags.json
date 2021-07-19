@@ -1,14 +1,8 @@
 {
   "HeaderPrismic": {
-    "description": "Auto imported from /components/HeaderPrismic.vue"
-  },
-  "LazyHeaderPrismic": {
-    "description": "Auto imported from /components/HeaderPrismic.vue"
+    "description": "Auto imported from components/HeaderPrismic.vue"
   },
   "Logo": {
-    "description": "Auto imported from /components/Logo.vue"
-  },
-  "LazyLogo": {
-    "description": "Auto imported from /components/Logo.vue"
+    "description": "Auto imported from components/Logo.vue"
   }
 }

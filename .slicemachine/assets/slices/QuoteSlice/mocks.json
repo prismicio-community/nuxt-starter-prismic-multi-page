@@ -1,0 +1,39 @@
+[
+  {
+    "variation": "default-slice",
+    "name": "Default slice",
+    "slice_type": "quote_slice",
+    "items": [],
+    "primary": {
+      "quotetext": [
+        {
+          "type": "paragraph",
+          "text": "Culpa aliqua proident cupidatat exercitation pariatur.",
+          "spans": []
+        }
+      ]
+    }
+  },
+  {
+    "variation": "quoteReference",
+    "name": "Quote Reference",
+    "slice_type": "quote_slice",
+    "items": [],
+    "primary": {
+      "quotetext": [
+        {
+          "type": "paragraph",
+          "text": "Qui nulla nulla reprehenderit veniam cillum sint reprehenderit et dolore duis.",
+          "spans": []
+        }
+      ],
+      "reference": [
+        {
+          "type": "paragraph",
+          "text": "Proident sunt ad labore qui enim aliquip duis anim sint. Anim sunt in pariatur proident cupidatat voluptate nulla laborum officia.",
+          "spans": []
+        }
+      ]
+    }
+  }
+]

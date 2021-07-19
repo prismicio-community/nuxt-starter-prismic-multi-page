@@ -1,6 +1,13 @@
 <template>
   <section class='content-section quote container'>
-    <blockquote class="block-quotation">{{ $prismic.asText(slice.primary.quotetext) }}</blockquote>
+    <blockquote class="block-quotation">
+      {{ $prismic.asText(slice.primary.quotetext) }}
+    </blockquote>
+    <div v-if="slice.variation === 'quoteReference'">
+      <cite>
+        <prismic-rich-text :field="slice.primary.reference" />
+      </cite>
+    </div>
   </section>
 </template>
 
@@ -30,6 +37,7 @@ export default {
   line-height: 1.5em;
   quotes: "“" "”" "‘" "’";
   text-align: center;
+  margin-bottom: 12px;
 }
 .quote blockquote:before {
   color: #e9e9e9;
@@ -54,7 +62,18 @@ export default {
   vertical-align: -0.3em;
   content: close-quote;
 }
-
+.quote div {
+  width: 300px;
+  float: right;
+}
+.quote div cite {
+  display: flex;
+  line-height: 18px;
+}
+.quote div cite:before {
+  content: '-';
+  margin: 0px 4px 0px 0px;
+}
 @media (max-width: 767px) {
   .content-section {
     margin-bottom: 2rem;
