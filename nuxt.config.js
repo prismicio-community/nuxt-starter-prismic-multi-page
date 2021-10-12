@@ -59,7 +59,7 @@ export default {
     transpile: ["vue-slicezone", "nuxt-sm"]
   },
   storybook: {
-    stories: [...getStoriesPaths()]
+    stories: ["~/.slicemachine/assets/**/*.stories.@(js|jsx|ts|tsx|svelte)"]
   },
   ignore: ["**/*.stories.js", "**/*.stories.js"],
   generate: {

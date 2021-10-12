@@ -1,7 +1,33 @@
-import { wrapFunctional } from './utils'
-
 export { default as HeaderPrismic } from '../../components/HeaderPrismic.vue'
 export { default as Logo } from '../../components/Logo.vue'
 
-export const LazyHeaderPrismic = import('../../components/HeaderPrismic.vue' /* webpackChunkName: "components/header-prismic" */).then(c => wrapFunctional(c.default || c))
-export const LazyLogo = import('../../components/Logo.vue' /* webpackChunkName: "components/logo" */).then(c => wrapFunctional(c.default || c))
+// nuxt/nuxt.js#8607
+function wrapFunctional(options) {
+  if (!options || !options.functional) {
+    return options
+  }
+
+  const propKeys = Array.isArray(options.props) ? options.props : Object.keys(options.props || {})
+
+  return {
+    render(h) {
+      const attrs = {}
+      const props = {}
+
+      for (const key in this.$attrs) {
+        if (propKeys.includes(key)) {
+          props[key] = this.$attrs[key]
+        } else {
+          attrs[key] = this.$attrs[key]
+        }
+      }
+
+      return h(options, {
+        on: this.$listeners,
+        attrs,
+        props,
+        scopedSlots: this.$scopedSlots,
+      }, this.$slots.default)
+    }
+  }
+}

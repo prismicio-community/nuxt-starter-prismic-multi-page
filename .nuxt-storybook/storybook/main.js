@@ -1,4 +1,4 @@
-const stories = ['../../components/**/*.stories.@(ts|js)','/Users/philipsnow/prismic/nuxt-sm-tutorial-series/.slicemachine/assets/slices/*/*.stories.js']
+const stories = ['../../components/**/*.stories.@(ts|js)','../../.slicemachine/assets/**/*.stories.@(js|jsx|ts|tsx|svelte)']
 const addons  = ["@storybook\u002Faddon-essentials",{
   name: '@storybook/addon-postcss',
   options: {
