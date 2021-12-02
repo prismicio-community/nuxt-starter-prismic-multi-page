@@ -33,7 +33,6 @@ export default {
   },
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    "vue-essential-slices/src/styles/styles.scss",
     "@/assets/css/resetr.css",
     '@/assets/css/global.css',
   ],
