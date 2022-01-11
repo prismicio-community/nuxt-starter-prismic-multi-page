@@ -1,9 +1,8 @@
 {
   "libraries": [
-    "@/slices",
-    "vue-essential-slices"
+    "@/slices"
   ],
-  "_latest": "0.1.0",
+  "_latest": "0.1.2",
   "apiEndpoint": "https://your-repo-name.cdn.prismic.io/api/v2",
-  "storybook": "http://localhost:3003"
+  "localSliceCanvasURL": "http://localhost:3000/canvas"
 }
