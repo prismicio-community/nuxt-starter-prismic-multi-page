@@ -7,24 +7,21 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "storybook": "nuxt storybook",
-    "build-storybook": "nuxt storybook build",
     "slicemachine": "start-slicemachine --port 9999"
   },
   "dependencies": {
     "@nuxtjs/prismic": "^1.3.2",
     "cookies": "^0.8.0",
     "nuxt": "^2.15.8",
-    "nuxt-sm": "^0.0.9",
     "vue-slicezone": "^0.1.0"
   },
   "devDependencies": {
-    "@nuxtjs/storybook": "^4.2.0",
+    "@prismicio/slice-simulator-vue": "^0.1.1",
+    "slice-machine-ui": "^0.2.0",
+    "nuxt-sm": "^0.0.9",
     "core-js": "^3.18.2",
     "sass": "^1.42.1",
-    "sass-loader": "^10.1.0",
-    "slice-machine-ui": "^0.1.2",
-    "webpack": "^4.46.0"
+    "sass-loader": "^10.1.0"
   },
   "repository": {
     "type": "git",
