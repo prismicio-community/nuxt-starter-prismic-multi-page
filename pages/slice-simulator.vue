@@ -1,6 +1,6 @@
 <template>
-  <SliceSimulator :state="state" #default="{ slices }">
-    <SliceZone :slices="slices" />
+  <SliceSimulator :state="state" #default="props">
+    <SliceZone v-bind="props" />
   </SliceSimulator>
 </template>
 
@@ -8,7 +8,7 @@
 import { SliceSimulator } from "@prismicio/slice-simulator-vue";
 import SliceZone from "vue-slicezone";
 
-import state from "~~/.slicemachine/libraries-state.json";
+import state from "~/.slicemachine/libraries-state.json";
 
 export default {
   components: {

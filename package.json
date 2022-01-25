@@ -16,8 +16,8 @@
     "vue-slicezone": "^0.1.0"
   },
   "devDependencies": {
-    "@prismicio/slice-simulator-vue": "^0.1.0",
-    "slice-machine-ui": "^0.2.0-alpha.33",
+    "@prismicio/slice-simulator-vue": "^0.1.1",
+    "slice-machine-ui": "^0.2.0",
     "nuxt-sm": "^0.0.9",
     "core-js": "^3.18.2",
     "sass": "^1.42.1",
