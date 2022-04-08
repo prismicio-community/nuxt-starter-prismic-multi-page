@@ -14,7 +14,7 @@
         <ul v-if="menu && menu.data" class="-ml-5 -mt-5 flex justify-end">
           <li
             v-for="menuLink in menu.data.menu_links"
-            v-bind:key="menuLink.label"
+            v-bind:key="$prismic.asText(menuLink.label)"
             class="pt-5 pl-5"
           >
             <PrismicLink :field="menuLink.link" class="text-neutral-500">
