@@ -1,30 +1,30 @@
 {
-  "name": "nuxt-slicemachine-tutorial-series",
-  "description": "Sample website built with Nuxt.js using Slice Machine Prismic headless CMS",
-  "author": "Prismic",
+  "name": "nuxt-starter-prismic-multi-page",
+  "private": "true",
   "scripts": {
-    "dev": "nuxt",
+    "dev": "concurrently \"npm:nuxt:dev\" \"npm:slicemachine\" --names \"nuxt,slicemachine\" --prefix-colors green,magenta",
+    "nuxt:dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
     "generate": "nuxt generate",
-    "slicemachine": "start-slicemachine --port 9999"
+    "start": "nuxt start",
+    "format": "prettier --write .",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
-    "@nuxtjs/prismic": "^1.3.2",
-    "cookies": "^0.8.0",
-    "nuxt": "^2.15.8",
-    "vue-slicezone": "^0.1.0"
+    "@fontsource/lato": "^4.5.5",
+    "@fontsource/libre-baskerville": "^4.5.5",
+    "nuxt": "^2.15.8"
   },
   "devDependencies": {
-    "@prismicio/slice-simulator-vue": "^0.1.1",
-    "slice-machine-ui": "^0.2.0",
-    "nuxt-sm": "^0.0.9",
-    "core-js": "^3.18.2",
-    "sass": "^1.42.1",
-    "sass-loader": "^10.1.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/prismicio-community/nuxt-sm-tutorial-series"
+    "@nuxt/postcss8": "^1.1.3",
+    "@nuxtjs/prismic": "^1.4.1",
+    "@prismicio/slice-simulator-vue": "^0.2.0",
+    "autoprefixer": "^10.4.4",
+    "concurrently": "^7.1.0",
+    "postcss": "^8.4.12",
+    "prettier": "^2.6.2",
+    "prettier-plugin-tailwindcss": "^0.1.8",
+    "slice-machine-ui": "^0.3.4",
+    "tailwindcss": "^3.0.23"
   }
 }

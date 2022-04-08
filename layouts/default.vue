@@ -1,25 +1,16 @@
 <template>
-  <div>
-    <header-prismic/>
-    <nuxt />
+  <div class="antialiased">
+    <div class="px-6 pt-12 pb-10 text-neutral-700 antialiased md:pt-20">
+      <div class="mx-auto w-full max-w-3xl">
+        <main>
+          <nuxt />
+        </main>
+        <Footer />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HeaderPrismic from '~/components/HeaderPrismic.vue'
-
-export default {
-  components: {
-    HeaderPrismic
-  },
-  head () {
-    return {
-      title: 'Prismic Nuxt.js Multi Page Website',
-    }
-  },
-  // Called before rendering the layout (even for error page)
-  async middleware({ store, $prismic }) {
-    await store.dispatch('fetchMenu', $prismic)
-  }
-}
+export default {};
 </script>

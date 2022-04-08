@@ -1,15 +1,32 @@
 <template>
-  <section>
-    <slice-zone type="home-page" queryType="single" />
-  </section>
+  <div>
+    <SetUpRepo v-if="!blogHome" />
+    <HomeHeader
+      v-if="blogHome"
+      :image="blogHome.data.image"
+      :headline="blogHome.data.headline"
+      :description="blogHome.data.description"
+    />
+    <div v-if="blogHome" class="py-12 md:py-16">
+      <PostList :posts="posts" />
+    </div>
+  </div>
 </template>
 
 <script>
-import SliceZone from "vue-slicezone";
 export default {
-  name: "Homepage",
-  components: {
-    SliceZone
-  }
+  async asyncData({ $prismic }) {
+    const blogHome = await $prismic.api.getSingle("blog-home");
+    const posts =
+      (await $prismic.api.query(
+        $prismic.predicates.at("document.type", "post"),
+        { orderings: "[my.post.date desc]" }
+      )) || {};
+
+    return {
+      blogHome,
+      posts: posts.results || [],
+    };
+  },
 };
 </script>
