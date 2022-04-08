@@ -3,7 +3,7 @@
     <div class="pointer-events-none absolute inset-0">
       <PrismicImage
         :field="slice.primary.background"
-        class="select-none w-full h-full object-cover"
+        class="h-full w-full select-none object-cover"
       />
       <div
         class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"
