@@ -2,8 +2,10 @@
 
 Want to see an example of a multi-page website using [Prismic][prismic] and [Nuxt][nuxt]? Look no further! This project provides all the code you need for a personal website with a homepage, information pages, and navigation.
 
-- **See a live demo**: [Open live demo][live-demo]
-- **Learn more about Prismic and Nuxt**: [Prismic Nuxt Documentation][prismic-docs]
+- 👀 **See a live demo**: [Open live demo][live-demo]
+- 📚 **Learn more about Prismic and Nuxt**: [Prismic Nuxt Documentation][prismic-docs]
+
+## 📸 Screenshot
 
 <img src="https://user-images.githubusercontent.com/8601064/162544635-2fd1cff4-9fae-4e08-a68f-52d82f066835.png" alt="Screenshots of the site seen on deskop and mobile browsers" width="600" />
 
@@ -12,16 +14,18 @@ Want to see an example of a multi-page website using [Prismic][prismic] and [Nux
 To start a new project using this starter, run the following command in your terminal:
 
 ```sh
-prismic theme --theme-url https://github.com/prismicio-community/nuxt-sm-tutorial-series --conf sm.json
+npx prismic-cli@latest theme \
+  --theme-url https://github.com/prismicio-community/nuxt-sm-tutorial-series \
+  --conf sm.json
 ```
 
 This command will do the following:
 
-1. Ask you to log in to Prismic or create an account.
+1. Ask you to log in to Prismic or [create an account][prismic-sign-up].
 2. Create a new Prismic content repository.
 3. Start a new Nuxt project using this starter.
 
-To learn more about working with Prismic, [see the Prismic docs][prismic-docs].
+To learn more about working with Prismic, [**see the Prismic docs**][prismic-docs].
 
 ## License
 
@@ -43,5 +47,6 @@ limitations under the License.
 
 [prismic]: https://prismic.io/
 [prismic-docs]: https://prismic.io/docs/technologies/nuxt
+[prismic-sign-up]: https://prismic.io/dashboard/signup
 [nuxt]: https://nuxtjs.org/
 [live-demo]: https://nuxt-tutorial-series.netlify.app/
