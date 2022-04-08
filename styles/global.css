@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+section.bg-white.py-12 + section.bg-white.py-12 {
+  @apply pt-0 md:pt-0;
+}

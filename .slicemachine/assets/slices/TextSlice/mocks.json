@@ -1,0 +1,32 @@
+[
+  {
+    "variation": "default-slice",
+    "name": "Default slice",
+    "slice_type": "text_slice",
+    "items": [],
+    "primary": {
+      "text": [
+        {
+          "type": "paragraph",
+          "text": "Sint eiusmod est anim dolor proident nostrud qui elit dolor ut. Commodo id ex commodo consectetur est anim labore.",
+          "spans": []
+        }
+      ]
+    }
+  },
+  {
+    "variation": "twoColumn",
+    "name": "Two Column",
+    "slice_type": "text_slice",
+    "items": [],
+    "primary": {
+      "text": [
+        {
+          "type": "paragraph",
+          "text": "Duis nisi pariatur Lorem reprehenderit commodo ad ad magna non id sunt fugiat ipsum elit ipsum.",
+          "spans": []
+        }
+      ]
+    }
+  }
+]

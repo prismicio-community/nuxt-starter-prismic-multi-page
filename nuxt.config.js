@@ -42,8 +42,7 @@ export default {
     "@fontsource/lato/400.css",
     "@fontsource/lato/700.css",
     "@fontsource/lato/900.css",
-    "@fontsource/libre-baskerville/400.css",
-    "@fontsource/libre-baskerville/700.css",
+    "@fontsource/libre-baskerville/400-italic.css",
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -55,12 +54,12 @@ export default {
     apiOptions: {
       routes: [
         {
-          type: "blog-home",
+          type: "home-page",
           path: "/",
         },
         {
-          type: "post",
-          path: "/blog/:uid",
+          type: "page",
+          path: "/:uid",
         },
       ],
     },

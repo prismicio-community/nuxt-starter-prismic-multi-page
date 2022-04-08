@@ -11,13 +11,13 @@ export default {
   data() {
     return { components };
   },
-  async asyncData({ $prismic }) {
+  async asyncData({ $prismic, params }) {
     const menu = await $prismic.api.getSingle("menu");
-    const homePage = await $prismic.api.getSingle("home-page");
+    const page = await $prismic.api.getByUID("page", params.uid);
 
     return {
       menu,
-      slices: homePage.data.slices,
+      slices: page.data.body,
     };
   },
 };
