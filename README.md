@@ -2,8 +2,8 @@
 
 Want to see an example of a multi-page website using [Prismic][prismic] and [Nuxt][nuxt]? Look no further! This project provides all the code you need for a personal website with a homepage, information pages, and navigation.
 
-**Demo**: [Open live demo][live-demo]
-**Learn more about Prismic and Nuxt**: [Prismic Nuxt Documentation][prismic-docs]
+- **Demo**: [Open live demo][live-demo]
+- **Learn more about Prismic and Nuxt**: [Prismic Nuxt Documentation][prismic-docs]
 
 &nbsp;
 
