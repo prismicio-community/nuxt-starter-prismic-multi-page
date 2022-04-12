@@ -2,7 +2,7 @@
   <header
     class="relative -mb-px border-b border-neutral-200 bg-white px-6 py-4"
   >
-    <div class="mx-auto flex max-w-5xl items-baseline md:items-center">
+    <div class="mx-auto flex flex-col md:flex-row max-w-5xl items-baseline md:items-center">
       <NuxtLink
         v-if="menu && menu.data"
         to="/"
