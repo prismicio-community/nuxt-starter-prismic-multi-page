@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-section.bg-white.py-12 + section.bg-white.py-12 {
+[data-collapsible="true"].bg-white + [data-collapsible="true"].bg-white {
   @apply pt-0 md:pt-0;
 }

@@ -1,24 +1,25 @@
 <template>
-  <Layout :menu="menu">
-    <SliceZone :slices="slices" :components="components" />
-  </Layout>
+  <SliceZone :slices="page.data.slices" :components="components" />
 </template>
 
 <script>
-import { components } from "~/slices";
+import { components } from '~/slices'
 
 export default {
-  data() {
-    return { components };
-  },
-  async asyncData({ $prismic, params }) {
-    const menu = await $prismic.api.getSingle("menu");
-    const page = await $prismic.api.getByUID("page", params.uid);
-
+  async asyncData ({ $prismic, params, store }) {
+    const page = await $prismic.api.getByUID('page', params.uid)
+    await store.dispatch('prismic/load')
     return {
-      menu,
-      slices: page.data.body,
-    };
+      page
+    }
   },
-};
+  data () {
+    return { components }
+  },
+  head () {
+    return {
+      title: `${this.$prismic.asText(this.page.data.title)} | ${this.$prismic.asText(this.$store.state.prismic.settings.data.siteTitle)}`
+    }
+  }
+}
 </script>
