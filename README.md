@@ -7,7 +7,7 @@ Want to see an example of a multi-page website using [Prismic][prismic] and [Nux
 
 &nbsp;
 
-<img src="https://user-images.githubusercontent.com/8601064/162868315-df886ee1-3a6f-4aea-a447-f4a132dd01a9.png" alt="Screenshots of the site seen on deskop and mobile browsers" />
+<img src="https://user-images.githubusercontent.com/8601064/166617932-eaaa1643-f086-4909-9868-56234f8da98d.png" alt="Screenshots of the site seen on deskop and mobile browsers" />
 
 &nbsp;
 

@@ -1,18 +1,17 @@
 module.exports = {
   content: [
-    "./components/**/*.{js,vue,ts}",
-    "./slices/**/*.vue",
-    "./layouts/**/*.vue",
-    "./pages/**/*.vue",
-    "./plugins/**/*.{js,ts}",
-    "./nuxt.config.{js,ts}",
+    './components/**/*.vue',
+    './slices/**/*.vue',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './nuxt.config.{js,ts}'
   ],
   theme: {
     fontFamily: {
-      sans: "Lato, sans-serif",
-      serif: "'Libre Baskerville', sans-serif",
+      sans: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'
     },
-    extend: {},
+    extend: {}
   },
-  plugins: [],
-};
+  plugins: [require('@tailwindcss/aspect-ratio')]
+}
