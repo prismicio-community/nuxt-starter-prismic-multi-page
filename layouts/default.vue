@@ -8,7 +8,7 @@
         padding: '1rem',
         textAlign: 'center',
         fontSize: '0.85rem',
-        color: '#fff'
+        color: '#fff',
       }"
     >
       <p>
@@ -18,10 +18,9 @@
           target="_blank"
           rel="noreferrer"
           :style="{
-            textDecoration: 'underline'
+            textDecoration: 'underline',
           }"
-          >see the documentation</a
-        >. Remove this bar in <code>layouts/default.vue</code>.
+        >see the documentation</a>. Remove this bar in <code>layouts/default.vue</code>.
       </p>
     </div>
     <Header
@@ -36,10 +35,10 @@
 <script>
 export default {
   computed: {
-    navigation() {
+    navigation () {
       return this.$store.state.prismic.navigation
     },
-    settings() {
+    settings () {
       return this.$store.state.prismic.settings
     }
   }
