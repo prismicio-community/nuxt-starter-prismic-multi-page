@@ -57,20 +57,14 @@ To learn more about how to configure previews, read [Preview Drafts in Nuxt](htt
 
 ### Customize this website
 
-This website is preconfigured with Prismic. It has three Prismic packages installed:
-
-- `@prismicio/client` provides helpers for fetching content from Prismic
-- `@prismicio/react` provides React components for rendering content from Prismic
-- `@nuxtjs/prismic` provides a wrapper component to configure Prismic previews
-
-These packages are already integrated and employed in this app. Take a look at the code to see how they're used.
+This website is preconfigured with Prismic. Functionality is provided by the  `@nuxtjs/prismic` package, which makes Prismic utilities available throughout the app. Take a look at the code to see how it's used.
 
 ### Edit the code
 
 There are two steps to rendering content from Prismic in your Nuxt project:
 
-1. Fetch content from the Prismic API using `@prismicio/client`.
-2. Template the content using components from `@prismicio/react`.
+1. Fetch content from the Prismic API
+2. Template the content
 
 Here are some of the files in your project that you can edit:
 
