@@ -13,19 +13,25 @@ This page covers how to use **Prismic + Nuxt Multi-Page Starter** with Prismic.
 
 ## 🚀 Quick Start
 
-To start a new project using this starter, run the following command in your terminal:
+To start a new project using this starter, run the following commands in your terminal:
 
 ```sh
-npx prismic-cli@latest theme \
-  --theme-url https://github.com/prismicio-community/nuxt-starter-prismic-multi-page \
-  --conf sm.json
+npx degit prismicio-community/nuxt-starter-prismic-multi-page your-project-name
+cd your-project-name
+npx @slicemachine/init
 ```
 
-This command will do the following:
+The commands will do the following:
 
-1. Ask you to log in to Prismic or [create an account](https://prismic.io/dashboard/signup).
-2. Create a new Prismic content repository.
-3. Start a new Nuxt project using this starter.
+1. Start a new Next.js project using this starter.
+2. Ask you to log in to Prismic or [create an account][prismic-sign-up].
+3. Create a new Prismic content repository with sample content.
+
+When you're ready to start your project, run the following command:
+
+```sh
+npm run dev
+```
 
 To learn more about working with Prismic, [**see the Prismic docs**](https://prismic.io/docs/technologies/nextjs).
 
@@ -57,7 +63,7 @@ To learn more about how to configure previews, read [Preview Drafts in Nuxt](htt
 
 ### Customize this website
 
-This website is preconfigured with Prismic. Functionality is provided by the  `@nuxtjs/prismic` package, which makes Prismic utilities available throughout the app. Take a look at the code to see how it's used.
+This website is preconfigured with Prismic. Functionality is provided by the `@nuxtjs/prismic` package, which makes Prismic utilities available throughout the app. Take a look at the code to see how it's used.
 
 ### Edit the code
 
