@@ -1,0 +1,66 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "text": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Laboris id adipisicing ullamco sunt aliqua laborum ut fugiat in deserunt est. Proident in do cillum minim in veniam elit enim laborum fugiat culpa ut in veniam nostrud."
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Voluptate cupidatat deserunt pariatur elit exercitation mollit nostrud occaecat anim irure labore id. Duis quis in eu dolor anim veniam dolore laborum ex. Aliqua proident Lorem laboris ullamco proident consequat ad."
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Irure ad sunt eiusmod sint eiusmod excepteur anim consequat officia quis in aute aute excepteur."
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Culpa esse tempor ipsum do anim excepteur officia dolore dolore magna sit quis cillum non amet. Anim laborum est est. Anim magna fugiat dolor."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  },
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "twoColumns",
+    "primary": {
+      "text": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Sit quis dolor exercitation nulla nostrud amet dolor sit et. Officia reprehenderit consectetur cupidatat culpa nulla dolor reprehenderit. Proident culpa do laboris mollit."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]
