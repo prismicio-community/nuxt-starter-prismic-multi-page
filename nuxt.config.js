@@ -59,6 +59,7 @@ export default {
 
   prismic: {
     endpoint: sm.apiEndpoint,
+    preview: '/api/preview',
     modern: true,
     linkResolver: (doc) => {
       switch (doc.type) {
