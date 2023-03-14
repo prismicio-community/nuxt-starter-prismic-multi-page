@@ -24,7 +24,7 @@ export default {
   },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ['@nuxt/postcss8', '@nuxtjs/prismic'],
+  buildModules: ['@nuxtjs/prismic'],
 
   build: {
     // See: https://github.com/nuxt/postcss8/issues/24
@@ -34,9 +34,11 @@ export default {
       }
     },
     postcss: {
-      plugins: {
-        tailwindcss: {},
-        autoprefixer: {}
+      postcssOptions: {
+        plugins: {
+          tailwindcss: {},
+          autoprefixer: {}
+        }
       }
     },
     transpile: ['@prismicio/vue']
