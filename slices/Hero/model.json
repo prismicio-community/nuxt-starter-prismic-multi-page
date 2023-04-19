@@ -24,16 +24,14 @@
           "type": "Link",
           "config": {
             "label": "Button Link",
-            "placeholder": "",
+            "placeholder": "Button Link",
+            "allowTargetBlank": false,
             "select": null
           }
         },
         "buttonText": {
           "type": "Text",
-          "config": {
-            "label": "Button Text",
-            "placeholder": ""
-          }
+          "config": { "label": "Button Text", "placeholder": "" }
         },
         "backgroundImage": {
           "type": "Image",
