@@ -9,7 +9,7 @@ const { data: page } = useAsyncData('[uid]', () =>
 const { data: settings } = useAsyncData('$settings', () => prismic.client.getSingle('settings'))
 
 useHead({
-  title: `${prismic.asText(page.value?.data.title)} | ${prismic.asText(settings.value?.data.siteTitle)}`
+  title: computed(() =>`${prismic.asText(page.value?.data.title)} | ${prismic.asText(settings.value?.data.siteTitle)}`)
 })
 </script>
 
