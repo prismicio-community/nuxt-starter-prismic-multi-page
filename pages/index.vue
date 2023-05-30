@@ -7,7 +7,7 @@ const { data: page } = useAsyncData('index', () =>
 )
 
 useHead({
-  title: prismic.asText(page.value?.data.title)
+  title: computed(() => prismic.asText(page.value?.data.title))
 })
 </script>
 
