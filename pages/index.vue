@@ -1,25 +1,20 @@
-<template>
-  <SliceZone :slices="page.data.slices" :components="components" />
-</template>
-
-<script>
+<script setup lang="ts">
 import { components } from '~/slices'
 
-export default {
-  async asyncData ({ $prismic, store }) {
-    const page = await $prismic.api.getByUID('page', 'home')
-    await store.dispatch('prismic/load')
-    return {
-      page
-    }
-  },
-  data () {
-    return { components }
-  },
-  head () {
-    return {
-      title: this.$prismic.asText(this.page.data.title)
-    }
-  }
-}
+const prismic = usePrismic()
+const { data: page } = useAsyncData('index', () =>
+  prismic.client.getByUID('page', 'home')
+)
+
+useHead({
+  title: prismic.asText(page.value?.data.title)
+})
 </script>
+
+
+<template>
+  <SliceZone
+    :slices="page?.data.slices ?? []"
+    :components="components"
+  />
+</template>

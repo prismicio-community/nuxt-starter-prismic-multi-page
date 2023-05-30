@@ -1,3 +1,22 @@
+<script setup lang="ts">
+// TODO: Migrate
+import { HTMLMapSerializer } from '@prismicio/helpers';
+import { Content } from '@prismicio/client'
+
+// The array passed to \`getSliceComponentProps\` is purely optional.
+// Consider it as a visual hint for you when templating your slice.
+defineProps(getSliceComponentProps<Content.HeroSlice>(
+  ['slice', 'index', 'slices', 'context']
+));
+const prismic = usePrismic()
+
+const serializer: HTMLMapSerializer = {
+  ...prismic.options.richTextSerializer,
+  heading1: ({ children }) =>
+    /* html */ `<h2 class="font-semibold leading-tight tracking-tight md:leading-tight text-5xl md:text-7xl mb-4 mt-12 first:mt-0 last:mb-0">${children}</h2>`,
+}
+</script>
+
 <template>
   <section class="relative bg-slate-900 text-white">
     <figure class="absolute inset-0">
@@ -7,11 +26,14 @@
         class="pointer-events-none select-none object-cover opacity-40 h-full w-full"
       />
     </figure>
-    <Bounded y-padding="lg" class="relative">
+    <Bounded
+      y-padding="lg"
+      class="relative"
+    >
       <div class="grid justify-items-center gap-8">
         <PrismicRichText
           :field="slice.primary.text"
-          :html-serializer="htmlSerializer"
+          :html-serializer="serializer"
           class="max-w-2xl text-center"
           wrapper="div"
         />
@@ -26,24 +48,3 @@
     </Bounded>
   </section>
 </template>
-
-<script>
-import { getSliceComponentProps } from '@prismicio/vue/components'
-
-export default {
-  // The array passed to `getSliceComponentProps` is purely optional.
-  // Consider it as a visual hint for you when templating your slice.
-  props: getSliceComponentProps(['slice', 'index', 'slices', 'context']),
-  methods: {
-    htmlSerializer (type, element, content, children) {
-      switch (type) {
-        case 'heading1':
-          return /* html */ `<h2 class="font-semibold leading-tight tracking-tight md:leading-tight text-5xl md:text-7xl mb-4 mt-12 first:mt-0 last:mb-0">${children.join('')}</h2>`
-
-        default:
-          return this.$prismic?.htmlSerializer(type, element, content, children) ?? null
-      }
-    }
-  }
-}
-</script>

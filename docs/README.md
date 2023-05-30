@@ -18,12 +18,12 @@ To start a new project using this starter, run the following commands in your te
 ```sh
 npx degit prismicio-community/nuxt-starter-prismic-multi-page your-project-name
 cd your-project-name
-npx @slicemachine/init
+npx @slicemachine/init@latest
 ```
 
 The commands will do the following:
 
-1. Start a new Next.js project using this starter.
+1. Start a new Nuxt project using this starter.
 2. Ask you to log in to Prismic or [create an account][prismic-sign-up].
 3. Create a new Prismic content repository with sample content.
 
@@ -33,7 +33,7 @@ When you're ready to start your project, run the following command:
 npm run dev
 ```
 
-To learn more about working with Prismic, [**see the Prismic docs**](https://prismic.io/docs/technologies/nextjs).
+To learn more about working with Prismic, [**see the Prismic docs**](https://prismic.io/docs/nuxt-3-setup).
 
 ## Using and customizing your project
 
@@ -84,26 +84,26 @@ These are important files that you should leave as-is:
 - `pages/slice-simulator.vue` - Do not edit or delete this file. This file simulates your Slice components in development.
 - `slices/` - This directory contains Slice components, which are generated programmatically by Slice Machine. To customize a Slice template, you can edit the Slice's `index.js` file. To add Slices, delete Slices, or edit Slice models, use Slice Machine (more info below).
 
-Learn more about how to edit your components with [Fetch Data in Nuxt](https://prismic.io/docs/technologies/nuxt-fetch-data) and [Template Content in Nuxt](https://prismic.io/docs/technologies/nuxt-template-content).
+Learn more about how to edit your components with [Fetch Data in Nuxt](https://prismic.io/docs/nuxt-3-fetch-data) and [Template Content in Nuxt](https://prismic.io/docs/nuxt-3-template-content).
 
 Styling in this project is implemented with Tailwind CSS. See the [Tailwind docs](https://tailwindcss.com/docs) for more info.
 
 ### Deploy to the web
 
-To put your project online, see [Deploy your Nuxt App](https://prismic.io/docs/technologies/nuxt-deploy).
+To put your project online, see [Deploy your Nuxt App](https://prismic.io/docs/nuxt-3-deploy).
 
 ### Edit content models with Slice Machine
 
-This project includes an application called Slice Machine, which generates models for your Custom Types and Slices. Slice Machine stores the models locally in your codebase, so you can save and version them. It also syncs your models to Prismic. To learn how to use Slice Machine, read [Model Content in Nuxt](https://prismic.io/docs/technologies/nuxt-model-content).
+This project includes an application called Slice Machine, which generates models for your Custom Types and Slices. Slice Machine stores the models locally in your codebase, so you can save and version them. It also syncs your models to Prismic. To learn how to use Slice Machine, read [Model Content in Nuxt](https://prismic.io/docs/content-modeling).
 
-If you change or add to your Custom Types, you'll need to update your route handling to match. To learn how to do that, read [Define Paths in Nuxt](https://prismic.io/docs/technologies/nuxt-define-routes).
+If you change or add to your Custom Types, you'll need to update your route handling to match. To learn how to do that, read [Define Paths in Nuxt](https://prismic.io/docs/nuxt-3-define-routes).
 
 ## Learn more
 
 For the official Prismic documentation, see [Prismic's guide for Nuxt][prismic-docs] or the [technical references for the installed Prismic packages](https://prismic.io/docs/technologies/technical-references).
 
-[prismic]: https://prismic.io/
-[prismic-docs]: https://prismic.io/docs/technologies/nuxt
+[prismic]: https://prismic.io
+[prismic-docs]: https://prismic.io/docs/nuxt-3-setup
 [prismic-sign-up]: https://prismic.io/dashboard/signup
-[nextjs]: https://nextjs.org/
-[live-demo]: https://nuxt-starter-prismic-multi-page.vercel.app/
+[nuxt]: https://nuxt.com
+[live-demo]: https://nuxt-starter-prismic-multi-page.vercel.app
