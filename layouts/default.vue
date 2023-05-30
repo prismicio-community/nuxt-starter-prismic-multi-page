@@ -25,6 +25,6 @@
       </div>
     </DevOnly>
     <Header />
-    <main><slot /></main>
+    <slot />
   </div>
 </template>

@@ -1,7 +1,6 @@
 <script setup lang="ts">
-const prismic = usePrismic()
-const { data: navigation } = useAsyncData('$navigation', () => prismic.client.getSingle('navigation'))
-const { data: settings } = useAsyncData('$settings', () => prismic.client.getSingle('settings'))
+const navigation = useNavigation()
+const settings = useSettings()
 </script>
 
 <template>
