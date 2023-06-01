@@ -1,36 +1,43 @@
-# Prismic + Nuxt.js Crash Course
+# Prismic + Nuxt Multi-Page Starter
 
-[Prismic][prismic] is a headless website builder. With a traditional CMS, you can manage a website's text and images. With Prismic, you can also manage website components — so teams can build their entire website with Prismic.
+Want to see an example of a multi-page website using [Prismic][prismic] and [Nuxt][nuxt]? Look no further! This project provides all the code you need for a personal website with a homepage, information pages, and navigation.
 
-This repository should be used alongside [Prismic's Crash Course guide][prismic-crash-course].
+- **Demo**: [Open live demo][live-demo]
+- **Learn more about Prismic and Nuxt**: [Prismic Nuxt Documentation][prismic-docs]
 
-[**View the Prismic + Nuxt.js Crash Course**][prismic-crash-course]
+&nbsp;
 
-## 🚀 Quick start
+<img src="https://user-images.githubusercontent.com/8601064/166617932-eaaa1643-f086-4909-9868-56234f8da98d.png" alt="Screenshots of the site seen on deskop and mobile browsers" />
 
-The fastest way to learn Prismic is with a hands-on demo.
+&nbsp;
+
+## 🚀 Quick Start
+
+To start a new project using this starter, run the following commands in your terminal:
 
 ```sh
-npx degit https://github.com/prismicio-community/crash-course-nuxt crash-course-nuxt
-cd crash-course-nuxt
+npx degit prismicio-community/nuxt-starter-prismic-multi-page your-project-name
+cd your-project-name
 npx @slicemachine/init@latest
 ```
 
-With these commands, you’ll get a fully-featured Prismic website to test out.
+The commands will do the following:
 
-You’ll be asked to log in with a Prismic account and name a new Prismic content repository. Go ahead and name the repository anything you want.
+1. Start a new Next.js project using this starter.
+2. Ask you to log in to Prismic or [create an account][prismic-sign-up].
+3. Create a new Prismic content repository with sample content.
 
-Once the app is created, navigate into the app directory and start it up.
+When you're ready to start your project, run the following command:
 
 ```sh
 npm run dev
 ```
 
-You’ll be able to see the live site running at <http://localhost:3000>.
+## Documentation
 
-## Learn more
+To learn how to work with your new project, [**see this starter's docs**][starter-docs].
 
-Continue learning about Prismic with the [Prismic + Nuxt.js Crash Course][prismic-crash-course].
+To learn more about working with Prismic, [**see the Prismic docs**][prismic-docs].
 
 ## License
 
@@ -41,7 +48,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-http://www.apache.org/licenses/LICENSE-2.0
+    http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -51,4 +58,8 @@ limitations under the License.
 ```
 
 [prismic]: https://prismic.io
-[prismic-crash-course]: https://prismic.io/docs/technologies/nuxtjs-crash-course
+[prismic-docs]: https://prismic.io/docs/nuxt-3-setup
+[prismic-sign-up]: https://prismic.io/dashboard/signup
+[starter-docs]: ./docs/README.md
+[nuxt]: https://nuxt.com
+[live-demo]: https://nuxt-starter-prismic-multi-page.vercel.app
