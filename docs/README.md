@@ -74,7 +74,7 @@ There are two steps to rendering content from Prismic in your Nuxt project:
 
 Here are some of the files in your project that you can edit:
 
-- `nuxt.config.js` - The `prismic` property includes configurations for `@nuxtjs/prismic`.
+- `nuxt.config.ts` - The `prismic` property includes configurations for `@nuxtjs/prismic`.
 - `pages/index.vue` - This is the app homepage. It queries and renders a page document with the UID (unique identifier) "home" from the Prismic API.
 - `pages/[uid].vue` - This is the page component, which queries and renders a page document from your Prismic repository based on the UID.
 - `slices/\*/index.vue` - Each Slice in your project has an index.js file that renders the Slice component. Edit this file to customize your Slices.
