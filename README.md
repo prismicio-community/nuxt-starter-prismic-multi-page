@@ -23,7 +23,7 @@ npx @slicemachine/init@latest
 
 The commands will do the following:
 
-1. Start a new Next.js project using this starter.
+1. Start a new Nuxt project using this starter.
 2. Ask you to log in to Prismic or [create an account][prismic-sign-up].
 3. Create a new Prismic content repository with sample content.
 
