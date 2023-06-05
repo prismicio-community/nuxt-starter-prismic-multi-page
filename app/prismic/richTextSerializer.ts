@@ -1,7 +1,6 @@
-// TODO: Migrate
-import { HTMLMapSerializer } from '@prismicio/helpers';
+import { HTMLRichTextMapSerializer } from '@prismicio/client';
 
-const serializer: HTMLMapSerializer = {
+const serializer: HTMLRichTextMapSerializer = {
   heading1: ({ children }) =>
     /* html */ `<h1 class="font-semibold leading-tight tracking-tight md:leading-tight text-4xl md:text-5xl mb-7 mt-12 first:mt-0 last:mb-0">${children}</h1>`,
   heading2: ({ children }) =>

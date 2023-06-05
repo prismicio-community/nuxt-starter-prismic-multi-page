@@ -23,7 +23,7 @@ defineProps(getSliceComponentProps<Content.ImageCardsSlice>(
       <ul class="grid grid-cols-1 gap-8 md:grid-cols-2">
         <li
           v-for="item in slice.items"
-          :key="item.image.url"
+          :key="item.image.url ?? undefined"
           class="grid gap-8"
         >
           <div
