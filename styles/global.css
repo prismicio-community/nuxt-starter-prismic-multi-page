@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply overflow-x-hidden antialiased;
+}
+
 [data-collapsible="true"].bg-white + [data-collapsible="true"].bg-white {
   @apply pt-0 md:pt-0;
 }
