@@ -22,12 +22,12 @@
     "@nuxt/eslint-config": "^0.1.1",
     "@nuxtjs/prismic": "^3.0.0",
     "@nuxtjs/tailwindcss": "^6.7.2",
-    "@slicemachine/adapter-nuxt": "^0.3.0",
+    "@slicemachine/adapter-nuxt": "^0.3.6",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@types/node": "^18",
     "concurrently": "^8.2.0",
     "eslint": "^8.42.0",
     "nuxt": "^3.5.3",
-    "slice-machine-ui": "^1.2.0"
+    "slice-machine-ui": "^1.5.3"
   }
 }
