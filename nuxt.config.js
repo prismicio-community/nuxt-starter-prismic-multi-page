@@ -1,4 +1,4 @@
-import { repositoryName } from "./slicemachine.config.json";
+import { repositoryName } from './slicemachine.config.json'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -40,8 +40,7 @@ export default {
           autoprefixer: {}
         }
       }
-    },
-    transpile: ['@prismicio/vue']
+    }
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -71,7 +70,7 @@ export default {
           return '/'
       }
     },
-    htmlSerializer(type, element, content, children) {
+    htmlSerializer (type, element, content, children) {
       switch (type) {
         case 'heading1':
           return /* html */ `<h1 class="font-semibold leading-tight tracking-tight md:leading-tight text-4xl md:text-5xl mb-7 mt-12 first:mt-0 last:mb-0">${children.join(
