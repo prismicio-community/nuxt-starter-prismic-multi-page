@@ -16,14 +16,16 @@ defineProps({
 </script>
 
 <template>
-  <Component :is="as"
+  <Component
+    :is="as"
     :data-collapsible="collapsible || null"
     class="px-6"
     :class="{
-          'py-8 md:py-10': yPadding === 'sm',
-          'py-20 md:py-28': yPadding === 'base',
-          'py-32 md:py-48': yPadding === 'lg',
-        }">
+      'py-8 md:py-10': yPadding === 'sm',
+      'py-20 md:py-28': yPadding === 'base',
+      'py-32 md:py-48': yPadding === 'lg',
+    }"
+  >
     <div class="mx-auto w-full max-w-6xl">
       <slot />
     </div>
