@@ -3,6 +3,7 @@
     "./slices"
   ],
   "adapter": "@slicemachine/adapter-nuxt",
-  "repositoryName": "nextjs-starter-prismic-multi-page",
+  "repositoryName": "marketing",
+  "apiEndpoint": "https://marketing.wroom.io/api/v2",
   "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
 }
