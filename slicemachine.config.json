@@ -3,7 +3,6 @@
     "./slices"
   ],
   "adapter": "@slicemachine/adapter-nuxt",
-  "repositoryName": "marketing",
-  "apiEndpoint": "https://marketing.wroom.io/api/v2",
+  "repositoryName": "marketing-24",
   "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
 }
