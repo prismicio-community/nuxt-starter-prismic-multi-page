@@ -3,6 +3,6 @@
     "./slices"
   ],
   "adapter": "@slicemachine/adapter-nuxt",
-  "repositoryName": "nextjs-starter-prismic-multi-page",
+  "repositoryName": "marketing-24",
   "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
 }

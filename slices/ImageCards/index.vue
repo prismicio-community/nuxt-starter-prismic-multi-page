@@ -22,38 +22,38 @@ defineProps(getSliceComponentProps<Content.ImageCardsSlice>(
       </Heading>
       <ul class="grid grid-cols-1 gap-8 md:grid-cols-2">
         <li
-          v-for="item in slice.items"
-          :key="item.image.url ?? undefined"
+          v-for="card in slice.primary.cards"
+          :key="card.image.url ?? undefined"
           class="grid gap-8"
         >
           <div
-            v-if="item.image.url"
+            v-if="card.image.url"
             class="bg-gray-100"
           >
             <PrismicLink
-              v-if="item.buttonLink && ('id' in item.buttonLink || 'url' in item.buttonLink)"
-              :field="item.buttonLink"
+              v-if="card.buttonLink && ('id' in card.buttonLink || 'url' in card.buttonLink)"
+              :field="card.buttonLink"
               class="font-semibold"
               tabindex="-1"
             >
-              <PrismicImage :field="item.image" />
+              <PrismicImage :field="card.image" />
             </PrismicLink>
             <PrismicImage
               v-else
-              :field="item.image"
+              :field="card.image"
             />
           </div>
           <PrismicRichText
-            :field="item.text"
+            :field="card.text"
             class="leading-relaxed"
             wrapper="div"
           />
-          <div v-if="item.buttonLink && ('id' in item.buttonLink || 'url' in item.buttonLink)">
+          <div v-if="card.buttonLink && ('id' in card.buttonLink || 'url' in card.buttonLink)">
             <PrismicLink
-              :field="item.buttonLink"
+              :field="card.buttonLink"
               class="font-semibold"
             >
-              {{ item.buttonText || "More Info" }}
+              {{ card.buttonText || "More Info" }}
             </PrismicLink>
           </div>
         </li>
