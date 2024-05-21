@@ -55,7 +55,7 @@ In your repository, go to _Settings > Previews_. Under _Create a New Preview_, f
 
 - a name (like **Development** or **Production**)
 - the domain where your app is running (like <http://localhost:3000> or <https://www.yoursite.com>)
-- `/api/preview` for the Link Resolver
+- `/preview` for the Link Resolver
 
 Now, go to a draft document and click the eye icon in the top-right corner.
 
