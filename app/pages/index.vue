@@ -2,7 +2,7 @@
 import { components } from '~/slices'
 
 const prismic = usePrismic()
-const { data: page } = useAsyncData('index', () =>
+const { data: page } = await useAsyncData('index', () =>
   prismic.client.getByUID('page', 'home')
 )
 
