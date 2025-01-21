@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type Content } from '@prismicio/client'
+import type { Content } from '@prismicio/client'
 
 // The array passed to \`getSliceComponentProps\` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
@@ -14,7 +14,7 @@ defineProps(getSliceComponentProps<Content.TextWithImageSlice>(
     class="bg-white"
   >
     <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
-      <PrismicRichText :field="slice.primary.text" />
+      <PrismicRichText :field="slice.primary.text" wrapper="div" />
       <div>
         <div
           v-if="slice.primary.image.url"
