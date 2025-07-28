@@ -10,7 +10,7 @@ defineProps(getSliceComponentProps<Content.HeroSlice>(
 ));
 const prismic = usePrismic()
 
-const serializer: VueRichTextSerializer = {
+const components: VueRichTextSerializer = {
   ...prismic.options.components?.richTextComponents,
   heading1: Heading1,
 }
@@ -32,7 +32,7 @@ const serializer: VueRichTextSerializer = {
       <div class="grid justify-items-center gap-8">
         <PrismicRichText
           :field="slice.primary.text"
-          :components="serializer"
+          :components="components"
           class="max-w-2xl text-center"
           wrapper="div"
         />
