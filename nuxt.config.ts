@@ -51,6 +51,9 @@ export default defineNuxtConfig({
           path: '/',
         },
       ]
+    },
+    components: {
+      richTextComponents: "~/prismic/richTextComponents"
     }
   },
 

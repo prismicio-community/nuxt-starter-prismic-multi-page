@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import type { Content, HTMLRichTextMapSerializer } from '@prismicio/client'
+import type { Content } from '@prismicio/client'
+import type { VueRichTextSerializer } from '@prismicio/vue'
+import Heading1 from '~/slices/Hero/Heading1.vue';
 
 // The array passed to \`getSliceComponentProps\` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
@@ -8,10 +10,9 @@ defineProps(getSliceComponentProps<Content.HeroSlice>(
 ));
 const prismic = usePrismic()
 
-const serializer: HTMLRichTextMapSerializer = {
-  ...prismic.options.richTextSerializer,
-  heading1: ({ children }) =>
-    /* html */ `<h2 class="font-semibold leading-tight tracking-tight md:leading-tight text-5xl md:text-7xl mb-4 mt-12 first:mt-0 last:mb-0">${children}</h2>`,
+const components: VueRichTextSerializer = {
+  ...prismic.options.components?.richTextComponents,
+  heading1: Heading1,
 }
 </script>
 
@@ -31,7 +32,7 @@ const serializer: HTMLRichTextMapSerializer = {
       <div class="grid justify-items-center gap-8">
         <PrismicRichText
           :field="slice.primary.text"
-          :html-serializer="serializer"
+          :components="components"
           class="max-w-2xl text-center"
           wrapper="div"
         />
