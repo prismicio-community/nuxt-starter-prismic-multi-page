@@ -39,11 +39,9 @@ defineProps(getSliceComponentProps<Content.ImageCardsSlice>());
               :field="card.image"
             />
           </div>
-          <PrismicRichText
-            :field="card.text"
-            class="leading-relaxed"
-            wrapper="div"
-          />
+          <div class="leading-relaxed">
+            <PrismicRichText :field="card.text" />
+          </div>
           <div v-if="card.buttonLink && ('id' in card.buttonLink || 'url' in card.buttonLink)">
             <PrismicLink
               :field="card.buttonLink"
