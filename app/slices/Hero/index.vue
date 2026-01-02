@@ -3,11 +3,7 @@ import type { Content } from '@prismicio/client'
 import type { VueRichTextSerializer } from '@prismicio/vue'
 import Heading1 from '~/slices/Hero/Heading1.vue';
 
-// The array passed to \`getSliceComponentProps\` is purely optional.
-// Consider it as a visual hint for you when templating your slice.
-defineProps(getSliceComponentProps<Content.HeroSlice>(
-  ['slice', 'index', 'slices', 'context']
-));
+defineProps(getSliceComponentProps<Content.HeroSlice>());
 const prismic = usePrismic()
 
 const components: VueRichTextSerializer = {

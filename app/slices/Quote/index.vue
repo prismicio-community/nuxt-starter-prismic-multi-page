@@ -1,11 +1,7 @@
 <script setup lang="ts">
 import type { Content } from '@prismicio/client'
 
-// The array passed to \`getSliceComponentProps\` is purely optional.
-// Consider it as a visual hint for you when templating your slice.
-defineProps(getSliceComponentProps<Content.QuoteSlice>(
-  ['slice', 'index', 'slices', 'context']
-));
+defineProps(getSliceComponentProps<Content.QuoteSlice>());
 </script>
 
 <template>
@@ -14,7 +10,7 @@ defineProps(getSliceComponentProps<Content.QuoteSlice>(
     class="bg-white"
   >
     <figure
-      v-if="$prismic.asText(slice.primary.quote)"
+      v-if="$prismic.isFilled.richText(slice.primary.quote)"
       class="grid gap-6"
     >
       <blockquote>
@@ -24,11 +20,11 @@ defineProps(getSliceComponentProps<Content.QuoteSlice>(
             'text-center': !slice.primary.source
           }"
         >
-          <span class="-ml-3.5 select-none text-slate-400 md:-ml-5">&ldquo;</span>{{ $prismic.asText(slice.primary.quote) }}<span class="select-none text-slate-400">&rdquo;</span>
+          <span class="-ml-3.5 select-none text-slate-400 md:-ml-5">&ldquo;</span><PrismicText :field="slice.primary.quote" /><span class="select-none text-slate-400">&rdquo;</span>
         </p>
       </blockquote>
       <figcaption
-        v-if="slice.primary.source"
+        v-if="$prismic.isFilled.keyText(slice.primary.source)"
         class="text-right"
       >
         &mdash; {{ slice.primary.source }}

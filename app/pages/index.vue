@@ -1,21 +1,20 @@
 <script setup lang="ts">
+import { asText } from '@prismicio/client'
 import { components } from '~/slices'
 
-const prismic = usePrismic()
+const { client } = usePrismic()
 const { data: page } = await useAsyncData('index', () =>
-  prismic.client.getByUID('page', 'home')
+  client.getByUID('page', 'home')
 )
 
 useHead({
-  title: computed(() => prismic.asText(page.value?.data.title))
+  title: computed(() => asText(page.value?.data.title))
 })
 </script>
 
 
 <template>
-  <SliceZone
-    wrapper="main"
-    :slices="page?.data.slices ?? []"
-    :components="components"
-  />
+  <main>
+    <SliceZone :slices="page?.data.slices ?? []" :components="components" />
+  </main>
 </template>

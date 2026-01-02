@@ -15,9 +15,7 @@ const settings = useSettings()
         to="/"
         class="text-xl font-semibold tracking-tight"
       >
-        {{
-          $prismic.asText(settings?.data.siteTitle)
-        }}
+        <PrismicText :field="settings?.data.siteTitle" />
       </NuxtLink>
       <nav>
         <ul
@@ -25,15 +23,13 @@ const settings = useSettings()
         >
           <li
             v-for="item in navigation?.data.links"
-            :key="$prismic.asText(item.label) || ''"
+            :key="JSON.stringify(item.label)"
             class="font-semibold tracking-tight text-slate-800"
           >
             <PrismicLink
               :field="item.link"
             >
-              {{
-                $prismic.asText(item.label)
-              }}
+              <PrismicText :field="item.label" />
             </PrismicLink>
           </li>
         </ul>

@@ -1,11 +1,7 @@
 <script setup lang="ts">
 import type { Content } from '@prismicio/client'
 
-// The array passed to \`getSliceComponentProps\` is purely optional.
-// Consider it as a visual hint for you when templating your slice.
-defineProps(getSliceComponentProps<Content.ImageCardsSlice>(
-  ['slice', 'index', 'slices', 'context']
-));
+defineProps(getSliceComponentProps<Content.ImageCardsSlice>());
 </script>
 
 <template>
@@ -15,10 +11,10 @@ defineProps(getSliceComponentProps<Content.ImageCardsSlice>(
   >
     <div class="grid gap-12">
       <Heading
-        v-if="$prismic.asText(slice.primary.heading)"
+        v-if="$prismic.isFilled.richText(slice.primary.heading)"
         class="text-center"
       >
-        {{ $prismic.asText(slice.primary.heading) }}
+        <PrismicText :field="slice.primary.heading" />
       </Heading>
       <ul class="grid grid-cols-1 gap-8 md:grid-cols-2">
         <li

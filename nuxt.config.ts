@@ -41,15 +41,8 @@ export default defineNuxtConfig({
     preview: '/api/preview',
     clientConfig: {
       routes: [
-        {
-          type: 'page',
-          path: '/:uid',
-        },
-        {
-          type: 'page',
-          uid: 'home',
-          path: '/',
-        },
+        { type: 'page', uid: 'home', path: '/' },
+        { type: 'page', path: '/:uid' }
       ]
     },
     components: {
@@ -57,5 +50,5 @@ export default defineNuxtConfig({
     }
   },
 
-  compatibilityDate: '2025-07-16',
+  compatibilityDate: '2026-01-02',
 })
