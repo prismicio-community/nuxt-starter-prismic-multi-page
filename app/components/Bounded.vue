@@ -2,17 +2,17 @@
 defineProps({
   as: {
     type: [String, Object, Function],
-    default: 'div'
+    default: "div",
   },
   yPadding: {
     type: String,
-    default: 'base'
+    default: "base",
   },
   collapsible: {
     type: Boolean,
-    default: true
-  }
-})
+    default: true,
+  },
+});
 </script>
 
 <template>
@@ -31,4 +31,3 @@ defineProps({
     </div>
   </Component>
 </template>
-

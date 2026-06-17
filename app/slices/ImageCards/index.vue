@@ -1,14 +1,11 @@
 <script setup lang="ts">
-import type { Content } from '@prismicio/client'
+import type { Content } from "@prismicio/client";
 
 defineProps(getSliceComponentProps<Content.ImageCardsSlice>());
 </script>
 
 <template>
-  <Bounded
-    as="section"
-    class="bg-white"
-  >
+  <Bounded as="section" class="bg-white">
     <div class="grid gap-12">
       <Heading
         v-if="$prismic.isFilled.richText(slice.primary.heading)"
@@ -22,31 +19,30 @@ defineProps(getSliceComponentProps<Content.ImageCardsSlice>());
           :key="card.image.url ?? undefined"
           class="grid gap-8"
         >
-          <div
-            v-if="card.image.url"
-            class="bg-gray-100"
-          >
+          <div v-if="card.image.url" class="bg-gray-100">
             <PrismicLink
-              v-if="card.buttonLink && ('id' in card.buttonLink || 'url' in card.buttonLink)"
+              v-if="
+                card.buttonLink &&
+                ('id' in card.buttonLink || 'url' in card.buttonLink)
+              "
               :field="card.buttonLink"
               class="font-semibold"
               tabindex="-1"
             >
               <PrismicImage :field="card.image" />
             </PrismicLink>
-            <PrismicImage
-              v-else
-              :field="card.image"
-            />
+            <PrismicImage v-else :field="card.image" />
           </div>
           <div class="leading-relaxed">
             <PrismicRichText :field="card.text" />
           </div>
-          <div v-if="card.buttonLink && ('id' in card.buttonLink || 'url' in card.buttonLink)">
-            <PrismicLink
-              :field="card.buttonLink"
-              class="font-semibold"
-            >
+          <div
+            v-if="
+              card.buttonLink &&
+              ('id' in card.buttonLink || 'url' in card.buttonLink)
+            "
+          >
+            <PrismicLink :field="card.buttonLink" class="font-semibold">
               {{ card.buttonText || "More Info" }}
             </PrismicLink>
           </div>
