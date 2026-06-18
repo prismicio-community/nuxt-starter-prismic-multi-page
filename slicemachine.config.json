@@ -1,8 +1,0 @@
-{
-  "libraries": [
-    "./app/slices"
-  ],
-  "adapter": "@slicemachine/adapter-nuxt",
-  "repositoryName": "marketing-24",
-  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
-}

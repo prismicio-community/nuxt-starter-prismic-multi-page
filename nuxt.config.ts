@@ -1,54 +1,41 @@
-import { repositoryName } from './slicemachine.config.json'
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
   app: {
     head: {
-      title: 'Prismic + Nuxt multi-page example',
+      title: "Prismic + Nuxt multi-page example",
       htmlAttrs: {
-        lang: 'en'
+        lang: "en",
       },
       meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
         {
-          name: 'description',
-          content: 'Prismic + Nuxt multi-page example'
+          name: "description",
+          content: "Prismic + Nuxt multi-page example",
         },
-        { name: 'format-detection', content: 'telephone=no' }
+        { name: "format-detection", content: "telephone=no" },
       ],
-      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }]
-    }
+      link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
+    },
   },
 
   css: [
-    '~/styles/global.css',
-    '@fontsource/inter/400.css',
-    '@fontsource/inter/500.css',
-    '@fontsource/inter/600.css'
+    "~/styles/global.css",
+    "@fontsource/inter/400.css",
+    "@fontsource/inter/500.css",
+    "@fontsource/inter/600.css",
   ],
 
-  modules: [
-    '@nuxt/eslint',
-    '@nuxtjs/prismic',
-    '@nuxtjs/tailwindcss'
-  ],
+  modules: ["@nuxt/eslint", "@nuxtjs/prismic", "@nuxtjs/tailwindcss"],
 
   prismic: {
-    endpoint: repositoryName,
-    preview: '/api/preview',
-    clientConfig: {
-      routes: [
-        { type: 'page', uid: 'home', path: '/' },
-        { type: 'page', path: '/:uid' }
-      ]
-    },
+    preview: "/api/preview",
     components: {
-      richTextComponents: "~/prismic/richTextComponents"
-    }
+      richTextComponents: "~/prismic/richTextComponents",
+    },
   },
 
-  compatibilityDate: '2026-01-02',
-})
+  compatibilityDate: "2026-01-02",
+});

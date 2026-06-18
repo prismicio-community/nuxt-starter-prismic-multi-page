@@ -5,28 +5,25 @@
   "license": "Apache-2.0",
   "author": "Prismic <contact@prismic.io> (https://prismic.io)",
   "scripts": {
-    "dev": "concurrently \"npm:nuxt:dev\" \"npm:slicemachine\" --names \"nuxt,slicemachine\" --prefix-colors green,magenta",
-    "nuxt:dev": "nuxt dev",
+    "dev": "nuxt dev",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "slicemachine": "start-slicemachine",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.8",
-    "@prismicio/client": "^7.21.3"
+    "@nuxtjs/prismic": "^5.3.0",
+    "@prismicio/client": "^7.21.8"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.12.1",
-    "@nuxtjs/prismic": "^5.1.0",
     "@nuxtjs/tailwindcss": "^6.14.0",
-    "@slicemachine/adapter-nuxt": "^0.3.93",
     "@tailwindcss/aspect-ratio": "^0.4.2",
-    "concurrently": "^9.2.1",
     "eslint": "^9.39.2",
     "nuxt": "^4.2.2",
-    "slice-machine-ui": "^2.20.5"
+    "prettier": "3.8.4"
   }
 }

@@ -1,0 +1,13 @@
+.nuxt
+.output
+.nitro
+dist
+
+# Generated and managed by the Prismic CLI
+prismicio-types.d.ts
+customtypes
+app/slices/**/model.json
+app/slices/**/mocks.json
+
+# Sample content documents
+documents
