@@ -1,5 +1,8 @@
 # Prismic + Nuxt Multi-Page Starter
 
+> [!NOTE]
+> This starter is archived and no longer updated. To start a new Prismic project with Nuxt, see the [Nuxt guide](https://prismic.io/docs/nuxt).
+
 Want to see an example of a multi-page website using [Prismic][prismic] and [Nuxt][nuxt]? Look no further! This project provides all the code you need for a personal website with a homepage, information pages, and navigation.
 
 - **Demo**: [Open live demo][live-demo]
